@@ -3,7 +3,7 @@
 A robust, full-stack eCommerce web application built using Python and the Django framework. This platform features a responsive frontend interface for customers to browse items and a comprehensive administrative backend panel for inventory, order, and user management.
 
 ---
-## 🌟Key Features
+## 🌟 Key Features
 
 * **Dynamic Catalog:** Beautiful customer storefront displaying live product listings.
 * **Admin Control Center:** Full CRUD capabilities (Create, Read, Update, Delete) for products, feedback, and user models.
@@ -25,7 +25,6 @@ A robust, full-stack eCommerce web application built using Python and the Django
 - Customer can see the order status (Pending, Confirmed, Delivered) for each order  
 - Customer can Download their order invoice for each order
 - Customer can send feedback to admin (without login)
----
 
 ## 👑 Admin
 - First admin will login ( for username/password run following command in cmd )
@@ -39,14 +38,13 @@ py manage.py createsuperuser
 - Admin can view/delete orders.
 - Admin can change status of order (order is pending, confirmed, out for delivery, delivered)
 - Admin can view the feedbacks sent by customers.
----
 
 ## 🛡️ Other Features
 - customer places order and admin deleted that user(fraud detection), then their orders will automatically deleted
 - suppose 1 customer places 4 products order and admin deleted 2 product from website, then that 2 product order will
     also be deleted and other 2 will be their
 - If user click on purchase button without having products in their cart, then website will ask to add product in cart first.
-
+--- 
 
 
 ## 🏗️ Architecture & Database Configuration
@@ -55,12 +53,12 @@ By default, Django is configured to use an **SQLite** database. Unlike enterpris
 | :--- | :--- | :--- |
 | **Database Engine** | `django.db.backends.sqlite3` | `ecommerce/settings.py` |
 | **Data Storage File** | `db.sqlite3` | Root Directory (`./db.sqlite3`) |
+---
 
 
-
-
+--- 
 # 🚀 Technical Setup & Installation
-
+---
 
 ## Option 1: Standard Installation (Pip)
 -1. Install Python(3.7.6) (Dont Forget to Tick Add to Path while installing Python)
@@ -83,6 +81,8 @@ py manage.py runserver
 ```
 http://127.0.0.1:8000/
 ```
+---
+
 
 
 ## Option 2: Isolated Installation (Anaconda)
@@ -110,32 +110,41 @@ Navigate to your local project directory and install all required modules sequen
 > cd "...\E-commerce Store"
 
 - Install project core dependencies
+```
 > pip install -r requirement.txt
-
+```
 - Install the PDF rendering extension explicitly
+```
 > pip install xhtml2pdf
-
+```
 
 ### Step 4: Initialize Database Tables
 Initialize the database tracking and apply schemas to build out your local db.sqlite3 file structure: one-by-one
-> python manage.py makemigrations
-> python manage.py migrate
+```
+python manage.py makemigrations
+``````
+python manage.py migrate
+```
 
 ### Step 5: Run server
-> py manage.py runserver
+```
+py manage.py runserver
 ```
 - Now enter following URL in Your Browser Installed On Your Pc
+```
 http://127.0.0.1:8000/
 ```
-
+---
 
 # Note:- During starting of project all things are empty because your database have empty to fill this then setup Superuser  
 
 
-
+---
 ## Create Admin Superuser
 Generate an administrative account to access the backend panel:
-> python manage.py createsuperuser
+```
+python manage.py createsuperuser
+```
 
 ### Follow the terminal prompts to set up your username, email, and password.
 - In settins.py file, You have to give your email and password
@@ -145,9 +154,12 @@ EMAIL_HOST_PASSWORD = 'your email password'
 EMAIL_RECEIVING_USER = 'youremail@gmail.com'
 ```
 
-### Authorization Troubleshooting: 
+---
+### Authorization Troubleshooting: (If it Occur)
 - If your admin account throws a permission or authorization error at login, execute the following commands in order to force-grant global staff and superuser privileges:
-> python manage.py shell
+```
+python manage.py shell
+```
 - Paste these lines one by one inside the interactive Python shell (>>>):
 ### Python
 ```
@@ -158,25 +170,30 @@ u.is_superuser = True
 u.save()
 exit()
 ```
+--- 
 
-
+---
 ## Run the Application
 - Start the local development server:
-> python manage.py runserver
-- Once the compilation is complete and the server is running, access your application locally using these endpoints:
+```
+python manage.py runserver
+```
 
-
+---
 ## Open your browser and navigate to:
-# Customer Storefront: http://127.0.0.1:8000/customer-home
-# Django Administration Panel: http://127.0.0.1:8000/admin (Log in here to click + Add on Products to populate your storefront UI)
+- Customer Storefront: ```http://127.0.0.1:8000/customer-home```
 
+- Django Administration Panel: ```http://127.0.0.1:8000/admin``` 
+(Log in here to click + Add on Products to populate your storefront UI)
+
+---
 
 ## Disclaimer
 This project is developed for demo purpose and it's not supposed to be used in real application.
 
 
-
-
+---
+---
 # 📁 Project Directory Structure
 
 Below is the complete architectural mapping of the repository repository files:
