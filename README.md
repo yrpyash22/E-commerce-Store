@@ -122,7 +122,8 @@ Navigate to your local project directory and install all required modules sequen
 Initialize the database tracking and apply schemas to build out your local db.sqlite3 file structure: one-by-one
 ```
 python manage.py makemigrations
-``````
+```
+```
 python manage.py migrate
 ```
 
